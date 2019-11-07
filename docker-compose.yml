@@ -29,17 +29,3 @@ services:
       environment:
         PHP_IDE_CONFIG: "serverName=docker"
 #        <<: *shared_env
-#    mysql_db:
-#      image: mysql:5.7
-#      volumes:
-#        - db_data:/var/lib/mysql
-#        - ./phpdocker/database:/dump/
-#      restart: always
-#      command: --sql_mode="NO_ENGINE_SUBSTITUTION"
-#      environment:
-#        MYSQL_ROOT_PASSWORD: root
-#        MYSQL_DATABASE: deadpool_dev
-#        MYSQL_USER: deadpool_dev
-#        MYSQL_PASSWORD: deadpool_dev
-#      ports:
-#        - "33066:3306"

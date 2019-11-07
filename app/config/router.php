@@ -4,6 +4,8 @@ $router = new \Phalcon\Mvc\Router();
 
 $router->setUriSource(\Phalcon\Mvc\Router::URI_SOURCE_SERVER_REQUEST_URI);
 
+$router->removeExtraSlashes(true);
+
 $router->add(
     '/',
     [

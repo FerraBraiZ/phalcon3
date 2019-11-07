@@ -1,8 +1,10 @@
+Runtime
+cache/
 vendor/
-.idea
-.env
-composer.phar
-clover.xml
-coveralls-upload.json
-phpunit.xml
-public/dist
+app/vendor/
+app/config/config_dev.php
+composer.lock
+*.volt.php
+*.volt%%e%%.php
+*.volt_e_.php
+*.volt__e__.php

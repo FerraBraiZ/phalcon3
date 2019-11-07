@@ -1,6 +1,6 @@
 <?php
 
-//namespace phalcon3\controller;
+namespace phalcon3\controller;
 
 class AttendanceController extends ControllerBase
 {
