@@ -1,0 +1,8 @@
+vendor/
+.idea
+.env
+composer.phar
+clover.xml
+coveralls-upload.json
+phpunit.xml
+public/dist
