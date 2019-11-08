@@ -7,13 +7,6 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 use Phalcon\Flash\Direct as Flash;
-use Phalcon\Mvc\View;
-use Phalcon\Mvc\View\Engine\Php as PhpEngine;
-use Phalcon\Mvc\Url as UrlResolver;
-use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
-use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
-use Phalcon\Session\Adapter\Files as SessionAdapter;
-use Phalcon\Flash\Direct as Flash;
 use Phalcon\Security;
 use PhalconTime\Controllers\Component\UserFragment;
 
@@ -49,8 +42,8 @@ $di->setShared('db', function () {
         'host'     => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
-        'dbname'   => $config->database->dbname//,
-        //'charset'  => $config->database->charset
+        'dbname'   => $config->database->dbname,
+        'charset'  => $config->database->charset
     ]);
 
     return $connection;
@@ -63,7 +56,7 @@ $di->setShared('db', function () {
 $di->setShared('view', function () {
     $config = $this->getConfig();
 
-    $view = new View();
+    $view = new Phalcon\Mvc\View();
     $view->setDI($this);
     $view->setViewsDir($config->application->viewsDir);
 

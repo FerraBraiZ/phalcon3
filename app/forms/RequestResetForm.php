@@ -1,73 +1,54 @@
 <?php
 
-//namespace PhalconTime\Forms;
+namespace Phalcon\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;
-use Phalcon\Forms\Element\Password;
 use Phalcon\Forms\Element\Hidden;
+use Phalcon\Validation\Validator\Email;
 use Phalcon\Validation\Validator\PresenceOf;
 use Phalcon\Validation\Validator\Identical;
 
-class LoginForm extends Form
+class RequestResetForm extends Form
 {
     /**
-     * Initialize the login form
+     * Initialize the forgot password form
      *
      * @param mixed $entity
      */
     public function initialize($entity = null)
     {
 
-        // Username
-        $name = new Text(
-            "username",
+        // Email
+        $email = new Text(
+            "email",
             [
-                "placeholder" => "Username",
+                "placeholder" => "Email",
                 "class"       => "form-control",
             ]
         );
-        $name->setFilters(
+        $email->setLabel("Email");
+        $email->setFilters(
             [
                 "striptags",
                 "string",
             ]
         );
-        $name->addValidators(
+        $email->addValidators(
             [
                 new PresenceOf(
                     [
-                        "message" => "Username is required",
+                        "message" => "E-mail is required",
+                    ]
+                ),
+                new Email(
+                    [
+                        "message" => "E-mail is not valid"
                     ]
                 )
             ]
         );
-        $this->add($name);
-
-        // Password
-        $password = new Password(
-            "password",
-            [
-                "placeholder" => "Password",
-                "class"       => "form-control",
-            ]
-        );
-        $password->setFilters(
-            [
-                "striptags",
-                "string",
-            ]
-        );
-        $password->addValidators(
-            [
-                new PresenceOf(
-                    [
-                        "message" => "Password is required",
-                    ]
-                )
-            ]
-        );
-        $this->add($password);
+        $this->add($email);
 
         // CSRF
         $csrf = new Hidden('csrf');

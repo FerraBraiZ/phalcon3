@@ -1,10 +1,10 @@
 <?php
 use Phalcon\Mvc\Controller;
-use PhalconTime\Forms\LoginForm;
-use PhalconTime\Forms\RequestResetForm;
-use PhalconTime\Forms\ResetPasswordForm;
-use PhalconTime\Models\User;
-use PhalconTime\Models\UserRole;
+use Phalcon\Forms\LoginForm;
+use Phalcon\Forms\RequestResetForm;
+use Phalcon\Forms\ResetPasswordForm;
+use Phalcon\Models\User;
+use Phalcon\Models\UserRole;
 use Phalcon\Security;
 use Phalcon\Security\Random;
 //use Phalcon\Mvc\Url;
@@ -17,7 +17,7 @@ class AuthController extends Controller
      */
     public function indexAction()
     {
-        $this->view->setVar('form', new LoginForm(null, ['edit' => false]));
+        //$this->view->setVar('form', new LoginForm(null, ['edit' => false]));
     }
 
     /**

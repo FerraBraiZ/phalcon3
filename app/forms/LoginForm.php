@@ -1,6 +1,6 @@
 <?php
 
-//namespace PhalconTime\Forms;
+namespace PhalconTime\Forms;
 
 use Phalcon\Forms\Form;
 use Phalcon\Forms\Element\Text;

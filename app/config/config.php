@@ -11,8 +11,8 @@ return new \Phalcon\Config([
         'adapter'     => 'Mysql',
         'host'        => 'localhost',
         'username'    => 'root',
-        'password'    => '',
-        'dbname'      => 'test',
+        'password'    => '753159',
+        'dbname'      => 'phalcon3',
         'charset'     => 'utf8',
     ],
     'application' => [
@@ -27,13 +27,7 @@ return new \Phalcon\Config([
         'formsDir'          => APP_PATH . '/forms/',
         'formsElementsDir'  => APP_PATH . '/forms/elements/',
         'vendorDir'         => APP_PATH . '/vendor/',
-        'cacheDir'          => BASE_PATH . '/cache/', 
-        'domainUri'         => 'http://phalcon3'
-
-
-        // This allows the baseUri to be understand project paths that are not in the root directory
-        // of the webpspace.  This will break if the public/index.php entry point is moved or
-        // possibly if the web server rewrite rules are changed. This can also be set to a static path.
+        'domainUri'         => 'http://phalcon3',
         'baseUri'        => preg_replace('/public([\/\\\\])index.php$/', '', $_SERVER["PHP_SELF"]),
     ],
     'settings' => [
