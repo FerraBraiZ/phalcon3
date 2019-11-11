@@ -1,7 +1,8 @@
 {
   "require": {
     "vlucas/phpdotenv": "^2.5",
-    "aws/aws-sdk-php": "^3.69"
+    "aws/aws-sdk-php": "^3.69",
+    "overtrue/socialite": "^2.0"
   },
   "config" : {
     "vendor-dir" : "vendor"

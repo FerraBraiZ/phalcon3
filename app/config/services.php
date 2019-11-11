@@ -1,15 +1,13 @@
 <?php
 
-use Phalcon\Mvc\View;
-use Phalcon\Mvc\View\Engine\Php as PhpEngine;
-use Phalcon\Mvc\Url as UrlResolver;
-use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
-use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
-use Phalcon\Session\Adapter\Files as SessionAdapter;
+use Phalcon\Controllers\Component\UserFragment;
 use Phalcon\Flash\Direct as Flash;
+use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
+use Phalcon\Mvc\Url as UrlResolver;
+use Phalcon\Mvc\View\Engine\Php as PhpEngine;
+use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Security;
-use PhalconTime\Controllers\Component\UserFragment;
-
+use Phalcon\Session\Adapter\Files as SessionAdapter;
 
 
 /**
@@ -38,7 +36,7 @@ $di->setShared('db', function () {
     $config = $this->getConfig();
 
     $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
-    $connection = new $class([
+    $params = new $class([
         'host'     => $config->database->host,
         'username' => $config->database->username,
         'password' => $config->database->password,
@@ -46,7 +44,12 @@ $di->setShared('db', function () {
         'charset'  => $config->database->charset
     ]);
 
-    return $connection;
+    if ($config->database->adapter == 'Postgresql') {
+        unset($params['charset']);
+    }
+
+    return new $class($params);
+
 });
 
 
@@ -101,29 +104,6 @@ $di->setShared('view', function () {
     return $view;
 });
 
-/**
- * Database connection is created based in the parameters defined in the configuration file
- */
-$di->setShared('db', function () {
-    $config = $this->getConfig();
-
-    $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
-    $params = [
-        'host'     => $config->database->host,
-        'username' => $config->database->username,
-        'password' => $config->database->password,
-        'dbname'   => $config->database->dbname,
-        'charset'  => $config->database->charset
-    ];
-
-    if ($config->database->adapter == 'Postgresql') {
-        unset($params['charset']);
-    }
-
-    $connection = new $class($params);
-
-    return $connection;
-});
 
 
 /**
