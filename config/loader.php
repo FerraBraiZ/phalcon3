@@ -1,8 +1,4 @@
 <?php
-
-date_default_timezone_set('America/Sao_Paulo');
-setlocale(LC_ALL, 'ptb', 'portuguese-brazil', 'pt-br', 'bra', 'brazil');
-
 $loader = new \Phalcon\Loader();
 
 /**
@@ -19,20 +15,20 @@ $loader->registerDirs(
  */
 $loader->registerNamespaces(
     [
-        'PhalconTime\Models'         => $config->application->modelsDir,
-        'PhalconTime\Controllers'    => $config->application->controllersDir,
-        'PhalconTime\Forms'          => $config->application->formsDir,
-        'PhalconTime\Forms\Elements' => $config->application->formsElementsDir
+        'Phalcon3\Models'         => $config->application->modelsDir,
+        'Phalcon3\Controllers'    => $config->application->controllersDir,
+        'Phalcon3\Forms'          => $config->application->formsDir,
+        'Phalcon3\Forms\Elements' => $config->application->formsElementsDir
     ]
 );
 
 /**
  * Register Files, Composer autoloader
- */
 $loader->registerFiles(
     [
         APP_PATH . '/vendor/autoload.php'
     ]
 );
+ */
 
 $loader->register();

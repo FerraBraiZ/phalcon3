@@ -14,7 +14,7 @@ use Phalcon\Session\Adapter\Files as SessionAdapter;
  * Shared configuration service
  */
 $di->setShared('config', function () {
-    return include APP_PATH . "/config/config.php";
+    return include BASE_PATH . "/config/config.php";
 });
 
 /**
@@ -22,7 +22,6 @@ $di->setShared('config', function () {
  */
 $di->setShared('url', function () {
     $config = $this->getConfig();
-
     $url = new UrlResolver();
     $url->setBaseUri($config->application->baseUri);
 

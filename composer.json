@@ -8,5 +8,16 @@
     "vendor-dir" : "vendor"
   },
   "require-dev": {
+  },
+  "autoload":{
+    "psr-4":{
+    },
+    "classmap":[
+    ],
+    "files":[
+      "config/autoload_test.php",
+      "tests/pdo_mysql_test.php"
+    ]
+
   }
 }

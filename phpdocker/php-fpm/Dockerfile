@@ -98,6 +98,10 @@ RUN apt-get install -yy  php7.3-phalcon
 RUN pecl install -f xdebug
 RUN pecl install -f mcrypt-1.0.1
 
+RUN pecl install -o -f redis
+RUN rm -rf /tmp/pear \
+RUN echo "extension=redis.so" > /etc/php/7.3/fpm/conf.d/redis.ini
+
 RUN echo "[Xdebug]\n" \
           "xdebug.remote_enable=1\n" \
           "xdebug.remote_port=9010\n" \
@@ -109,3 +113,5 @@ RUN echo "[Xdebug]\n" \
 RUN apt-get autoremove
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+RUN

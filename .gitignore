@@ -1,5 +1,6 @@
 Runtime
-cache/
+data/cache/
+data/cache/*.volt%%e%%.php
 vendor/
 app/vendor/
 app/config/config_dev.php
@@ -8,3 +9,10 @@ composer.lock
 *.volt%%e%%.php
 *.volt_e_.php
 *.volt__e__.php
+.idea/
+.idea
+environment/development.env
+cache/
+node_modules/
+mock/
+.env
