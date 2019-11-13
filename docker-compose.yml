@@ -1,51 +1,72 @@
-###############################################################################
-#                          Generated on phpdocker.io                          #
-###############################################################################
-version: "3.1"
-#x-custom:
-#  shared_env: &shared_env
-#    AWS_KEY: ${AWS_ACCESS_KEY_ID}
-#    AWS_SECRET: ${AWS_SECRET_ACCESS_KEY}
+version: "3.4"
+x-custom:
+  shared_env: &shared_env
+    AWS_KEY: ${AWS_ACCESS_KEY_ID}
+    AWS_SECRET: ${AWS_SECRET_ACCESS_KEY}
 
 services:
 
-    webserver:
-      image: nginx:alpine
-      container_name: webserver
+    nginx:
+      container_name: nginx
       working_dir: /phalcon3
+      build: ./environment/nginx
+      privileged: true
       volumes:
           - .:/phalcon3
-          - ./phpdocker/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
+          - ./environment/nginx/nginx.conf:/etc/nginx/conf.d/default.conf
       ports:
        - "8888:80"
+      env_file:
+        - '.env'
+      links:
+        - php-fpm
 
     php-fpm:
-      build: phpdocker/php-fpm
       container_name: php-fpm
+      privileged: true
       working_dir: /phalcon3
+      build: ./environment/php-7
       volumes:
         - .:/phalcon3
-        - ./phpdocker/php-fpm/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+        - ./environment/php-7/php-ini-overrides.ini:/etc/php/7.3/fpm/conf.d/99-overrides.ini
+      env_file:
+        - '.env'
       environment:
         PHP_IDE_CONFIG: "serverName=docker"
-#        <<: *shared_env
+        <<: *shared_env
+      links:
+        - redis
 
-    mysql:
-      image: mysql:8.0
-      container_name: mysql
+    redis:
+      container_name: redis
+      privileged: true
+      build: ./environment/redis
+      env_file:
+        - '.env'
+      ports:
+        - 6380:6379
+      deploy:
+        resources:
+          limits:
+            memory: 1g
+
+    mysqld:
+      container_name: mysqld
+      build: ./environment/mysql
+      privileged: true
       restart: always
       #command: --sql_mode="NO_ENGINE_SUBSTITUTION"
-      command: --default-authentication-plugin=mysql_native_password
+      #command: --default-authentication-plugin=mysql_native_password
+      volumes:
+        - .:/phalcon3
+        - ./environment/database-structure/dump.sql:/var/lib/mysql/dump.sql
+        - db_data:/var/lib/mysql
       environment:
         - MYSQL_ROOT_PASSWORD=753159
         - MYSQL_DATABASE=phalcon3
         - MYSQL_USER=root
         - MYSQL_PASSWORD=753159
       ports:
-        - "3306:3306"
-
-    redis:
-      image: redis:3.2-alpine
-      container_name: redis
-      ports:
-        - "63792:6379"
+        - "33060:3306"
+volumes:
+  db_data: {}

@@ -39,4 +39,4 @@ if ! [[ `docker network list | grep -w $DOCKER_NETWORK | awk -F' ' '{print $2}'`
 fi
 
 
-docker-compose up
+docker-compose up --remove-orphans

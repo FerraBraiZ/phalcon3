@@ -1,5 +1,5 @@
 FROM phpdockerio/php73-fpm:latest
-WORKDIR "/phalcon3"
+
 
 # Fix debconf warnings upon build
 ARG DEBIAN_FRONTEND=noninteractive
@@ -50,8 +50,6 @@ RUN apt-get install --no-install-recommends -yy gnupg
 RUN apt-get install --no-install-recommends -yy dirmngr
 RUN apt-get install --no-install-recommends -yy pwgen
 RUN apt-get install --no-install-recommends -yy perl
-
-
 
 # php 7.x and it's dependencies
 RUN apt-get install --no-install-recommends -yy php7.3
@@ -113,3 +111,6 @@ RUN echo "[Xdebug]\n" \
 RUN apt-get autoremove
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
+
+EXPOSE 9000
+WORKDIR /phalcon3

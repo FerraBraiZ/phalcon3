@@ -1,5 +1,6 @@
 <?php
 
+//defined('BASE_PATH') || define('BASE_PATH', dirname(__DIR__) ?: realpath(dirname(__FILE__) . '/../..'));
 defined('BASE_PATH') || define('BASE_PATH', dirname(__DIR__));
 defined('APP_PATH') || define('APP_PATH', BASE_PATH . '/app');
 
