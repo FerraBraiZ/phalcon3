@@ -1,17 +1,17 @@
 [
     {
         "name": "aws/aws-sdk-php",
-        "version": "3.115.0",
-        "version_normalized": "3.115.0.0",
+        "version": "3.117.0",
+        "version_normalized": "3.117.0.0",
         "source": {
             "type": "git",
             "url": "https://github.com/aws/aws-sdk-php.git",
-            "reference": "c705a740705bdfb7c23394a3a92adb2fe13fe149"
+            "reference": "3fc3d2c1962f34becc4313c839ed8b659d045114"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/c705a740705bdfb7c23394a3a92adb2fe13fe149",
-            "reference": "c705a740705bdfb7c23394a3a92adb2fe13fe149",
+            "url": "https://api.github.com/repos/aws/aws-sdk-php/zipball/3fc3d2c1962f34becc4313c839ed8b659d045114",
+            "reference": "3fc3d2c1962f34becc4313c839ed8b659d045114",
             "shasum": ""
         },
         "require": {
@@ -45,7 +45,7 @@
             "ext-openssl": "Allows working with CloudFront private distributions and verifying received SNS messages",
             "ext-sockets": "To use client-side monitoring"
         },
-        "time": "2019-11-07T19:27:35+00:00",
+        "time": "2019-11-13T19:14:25+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -486,17 +486,17 @@
     },
     {
         "name": "symfony/http-foundation",
-        "version": "v4.3.6",
-        "version_normalized": "4.3.6.0",
+        "version": "v4.3.8",
+        "version_normalized": "4.3.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/http-foundation.git",
-            "reference": "38f63e471cda9d37ac06e76d14c5ea2ec5887051"
+            "reference": "cabe67275034e173350e158f3b1803d023880227"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/38f63e471cda9d37ac06e76d14c5ea2ec5887051",
-            "reference": "38f63e471cda9d37ac06e76d14c5ea2ec5887051",
+            "url": "https://api.github.com/repos/symfony/http-foundation/zipball/cabe67275034e173350e158f3b1803d023880227",
+            "reference": "cabe67275034e173350e158f3b1803d023880227",
             "shasum": ""
         },
         "require": {
@@ -508,7 +508,7 @@
             "predis/predis": "~1.0",
             "symfony/expression-language": "~3.4|~4.0"
         },
-        "time": "2019-10-30T12:58:49+00:00",
+        "time": "2019-11-12T13:07:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -543,17 +543,17 @@
     },
     {
         "name": "symfony/mime",
-        "version": "v4.3.6",
-        "version_normalized": "4.3.6.0",
+        "version": "v4.3.8",
+        "version_normalized": "4.3.8.0",
         "source": {
             "type": "git",
             "url": "https://github.com/symfony/mime.git",
-            "reference": "3c0e197529da6e59b217615ba8ee7604df88b551"
+            "reference": "22aecf6b11638ef378fab25d6c5a2da8a31a1448"
         },
         "dist": {
             "type": "zip",
-            "url": "https://api.github.com/repos/symfony/mime/zipball/3c0e197529da6e59b217615ba8ee7604df88b551",
-            "reference": "3c0e197529da6e59b217615ba8ee7604df88b551",
+            "url": "https://api.github.com/repos/symfony/mime/zipball/22aecf6b11638ef378fab25d6c5a2da8a31a1448",
+            "reference": "22aecf6b11638ef378fab25d6c5a2da8a31a1448",
             "shasum": ""
         },
         "require": {
@@ -565,7 +565,7 @@
             "egulias/email-validator": "^2.1.10",
             "symfony/dependency-injection": "~3.4|^4.1"
         },
-        "time": "2019-10-30T12:58:49+00:00",
+        "time": "2019-11-12T13:10:02+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {

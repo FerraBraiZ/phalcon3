@@ -53,11 +53,11 @@ services:
     mysql:
       container_name: mysql
       build: ./environment/mysql
-      privileged: true
+      #privileged: true
       #restart: always
       command: --default-authentication-plugin=mysql_native_password
       environment:
-        - MYSQL_ALLOW_EMPTY_PASSWORD=1
+        #- MYSQL_ALLOW_EMPTY_PASSWORD=1
         - MYSQL_DATABASE=phalcon3
         - MYSQL_USER=root
         - MYSQL_PASSWORD=753159

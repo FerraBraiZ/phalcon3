@@ -2,6 +2,8 @@
 
 use Phalcon\Mvc\Controller;
 use Phalcon\Mvc\Dispatcher;
+use Phalcon\Http\Response;
+use Phalcon\Http\Request;
 
 class ControllerBase extends Controller
 {

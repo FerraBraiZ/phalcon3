@@ -1,11 +1,11 @@
 <?php
 
-class IndexController extends ControllerBase
+class DashboardController extends ControllerBase
 {
 
     public function indexAction()
     {
-        echo '404';
+        die('Dashboard');
     }
 
     public function route404Action()
