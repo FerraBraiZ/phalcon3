@@ -17,7 +17,8 @@ class ComposerStaticInit2c9ce811f12cef522998ef09b6902767
         'b067bc7112e384b61c701452d53a14a8' => __DIR__ . '/..' . '/mtdowling/jmespath.php/src/JmesPath.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8a9dc1de0ca7e01f3e08231539562f61' => __DIR__ . '/..' . '/aws/aws-sdk-php/src/functions.php',
-        'ddae4d2f74af9198011c91ce7d4af7a5' => __DIR__ . '/../..' . '/config/autoload_test.php',
+        'be6a564db822ce1a2980dd5910cb8f32' => __DIR__ . '/../..' . '/tests/autoload_test.php',
+        'b2013c35093e54f9d0965f8483636517' => __DIR__ . '/../..' . '/tests/pdo_mysql_test.php',
     );
 
     public static $prefixLengthsPsr4 = array (

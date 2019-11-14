@@ -15,7 +15,7 @@
     "classmap":[
     ],
     "files":[
-      "config/autoload_test.php",
+      "tests/autoload_test.php",
       "tests/pdo_mysql_test.php"
     ]
 
