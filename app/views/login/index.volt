@@ -251,8 +251,6 @@
             width: 40px;
         }
 
-
-
         .btn-google {
             color: #fff;
             background-color: #dd4b39;
