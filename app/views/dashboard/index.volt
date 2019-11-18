@@ -1,26 +1,39 @@
-<!-- AGENDA VIEW -->
-   
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+{% block header %}
+    {{ partial('header.volt')}};
+{% endblock %}
 
-<div class="panel panel-default">
+{% block menu %}
+    {{ partial('menu.volt')}};
+{% endblock %}
 
-    <div class="panel-heading">
-        <h1 class="panel-title">Atendimento Animal - Agenda <?=PGT;?></h1>                
-    </div> 
-   
-    <div class="agenda_box">    
-<!--//      
-<?//=$agenda
-?>--> 
+{% block messages %}
+    {{ partial('messages.volt')}};
+{% endblock %}
+
+{% block main %}
+
+    <div class="row">
+
+        <div class="col-xs-12">
+
+            <div class="panel panel-default">
+
+                <div class="panel-heading"><h1 class="panel-title">Home</h1></div>
+
+                <div class="dashboard"><h1>RÉLOW</h1></div>
+
+                <div id="dashboard"></div>
+
+            </div>
+
+        </div>
+
     </div>
-    
-    <div id="agenda_modals"></div>
-	
-</div><!-- ./panel panel-default -->
 
-<!-- /AGENDA VIEW -->
+{% endblock %}
 
-<script type="text/javascript">
-    var agenda_year ="<?=$agenda_year?>"; 
-    var agenda_month ="<?=$agenda_month?>";
-</script> 
+{% block footer %}
+    {{ partial('footer.volt')}};
+{% endblock %}
+
+

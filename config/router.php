@@ -137,8 +137,8 @@ try {
 
     $router->notFound(
         [
-            'controller' => 'index',
-            'action'     => 'route404',
+            'controller' => 'notfound',
+            'action'     => 'index',
         ]
     );
 

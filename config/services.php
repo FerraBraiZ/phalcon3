@@ -9,6 +9,11 @@ use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Security;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
 
+use Aws\S3\S3Client;
+use Aws\S3\PostObjectV4;
+use Aws\Exception\AwsException;
+use Aws\Credentials\Credentials;
+
 
 /**
  * Shared configuration service
@@ -24,7 +29,6 @@ $di->setShared('url', function () {
     $config = $this->getConfig();
     $url = new UrlResolver();
     $url->setBaseUri($config->application->baseUri);
-
     return $url;
 });
 
@@ -33,7 +37,6 @@ $di->setShared('url', function () {
  */
 $di->setShared('db', function () {
     $config = $this->getConfig();
-
     $class = 'Phalcon\Db\Adapter\Pdo\\' . $config->database->adapter;
     $params = new $class([
         'host'     => $config->database->host,
@@ -46,9 +49,7 @@ $di->setShared('db', function () {
     if ($config->database->adapter == 'Postgresql') {
         unset($params['charset']);
     }
-
     return new $class($params);
-
 });
 
 
@@ -57,30 +58,35 @@ $di->setShared('db', function () {
  */
 $di->setShared('view', function () {
     $config = $this->getConfig();
-
     $view = new Phalcon\Mvc\View();
     $view->setDI($this);
     $view->setViewsDir($config->application->viewsDir);
+    $view->setPartialsDir("/partials/");
 
-    $view->registerEngines([
+    $view->registerEngines(
+
+        [
+//        ".phtml" => "Phalcon\Mvc\View\Engine\Php",
+//        ".volt"  => "Phalcon\Mvc\View\Engine\Volt"
+
         '.volt' => function ($view) {
             $config = $this->getConfig();
 
             $volt = new VoltEngine($view, $this);
 
-            if($config->settings->development === FALSE) {
+            if($config->settings->development === false) {
                 $volt->setOptions([
                     'compiledPath' => $config->application->cacheDir,
                     'compiledSeparator' => '_',
-                    'compileAlways' => FALSE
+                    'compileAlways' => false
                 ]);
             }
 
-            if($config->settings->development === TRUE) {
+            if($config->settings->development === true) {
                 array_map('unlink', glob($config->application->cacheDir . '*.php'));
                 $volt->setOptions([
                     'compiledSeparator' => '_',
-                    'compileAlways' => TRUE
+                    'compileAlways' => true
                 ]);
             }
 
@@ -97,8 +103,9 @@ $di->setShared('view', function () {
             return $volt;
         },
         '.phtml' => PhpEngine::class
+        ]
 
-    ]);
+    );
 
     return $view;
 });
@@ -127,9 +134,104 @@ $di->set('flash', function () {
 /**
  * Start the session the first time some component request the session service
  */
-$di->setShared('session', function () {
+$di->setShared('session', function() {
     $session = new SessionAdapter();
     $session->start();
-
     return $session;
+});
+
+
+$di->setShared('s3Client',function(){
+    return new S3Client([
+        'version' => 'latest',
+        'region' => 'sa-east-1',
+        /*
+         'profile' => 'default', it'd read credentials from $PATH or /home/${USER}/.aws/credentials
+        */
+        'credentials' => [
+            'key'    => getenv('AWS_KEY'),
+            'secret' => getenv('AWS_SECRET')
+        ],
+    ]);
+});
+
+
+$di->setShared('postAwsPreSignedForm', function( $filename,$bucketName ){
+
+    try {
+
+        $client = $this->get('s3Client');
+
+        // Set some defaults for form input fields
+        $formInputs = ['acl' => 'private'];
+
+        // Construct an array of conditions for policy
+        $options = [
+            ["acl" => "private"],
+            ["bucket" => AWS_BUCKET],
+            ["content-type" => ""],
+            ["key" => "${filename}"],
+            ["success_action_status" => "201"]
+        ];
+
+        // Optional: configure expiration time string
+        $expires = '+1 hours';
+
+        $postObject = new PostObjectV4(
+            $client,
+            AWS_BUCKET,
+            $formInputs,
+            $options,
+            $expires
+        );
+
+        // Get attributes to set on an HTML form, e.g., action, method, enctype
+        $formAttributes = $postObject->getFormAttributes();
+
+        // Get form input fields. This will include anything set as a form input in
+        // the constructor, the provided JSON policy, your AWS access key ID, and an
+        // auth signature.
+        $formInputs = $postObject->getFormInputs();
+
+        return (object)[
+                "contentType" => [
+                    "content-type" => ""
+                ],
+                "acl" => [
+                    "acl" => "private"
+                ],
+                "successActionStatus" => [
+                    "success_action_status" => "201"
+                ],
+                "policy" => [
+                    "policy" => $formInputs["Policy"]
+                ],
+                "credential" => [
+                    "X-amz-credential" => $formInputs["X-Amz-Credential"]]
+                ,
+                "algorithm" => [
+                    "x-amz-algorithm" => $formInputs["X-Amz-Algorithm"]
+                ],
+                "date" => [
+                    "x-amz-date" => $formInputs["X-Amz-Date"]
+                ],
+                "signature" => [
+                    "x-amz-signature" => $formInputs["X-Amz-Signature"]
+                ],
+                "key" => [
+                    "key" => "${filename}"
+                ],
+                "postEndpoint" => [
+                    "postEndpoint" => $bucketName
+                ]
+            ];
+
+    }
+    catch(AwsException $e) {
+        return $e->getMessage();
+    }
+    catch (\Throwable $e) {
+        return  $e->getMessage();
+    }
+
 });
