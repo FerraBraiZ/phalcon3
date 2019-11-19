@@ -1,8 +1,12 @@
 <?php
 
+use Phalcon\Mvc\Router;
+
 try {
 
-    $router = new \Phalcon\Mvc\Router();
+    $router = new Router(false);
+//    $router->setDefaultController('index');
+//    $router->setDefaultAction('index');
 
     $router->add(
         '/',
@@ -37,10 +41,10 @@ try {
     );
 
     $router->add(
-        '/social-login-oauth-callback',
+        '/oauth-callback',
         [
-            'controller' => 'sociallogin',
-            'action'     => 'oauthCallback',
+            'controller' => 'oauthcallback',
+            'action'     => 'index',
         ]
     );
 
@@ -133,11 +137,41 @@ try {
         ]
     );
 
+    $router->add(
+        '/attendance/create',
+        [
+            'controller' => 'attendance',
+            'action'     => 'create',
+        ]
+    );
+
+    $router->add(
+        '/attendance/edit',
+        [
+            'controller' => 'attendance',
+            'action'     => 'edit',
+        ]
+    );
+
+    $router->add(
+        '/attendance/update',
+        [
+            'controller' => 'attendance',
+            'action'     => 'update',
+        ]
+    );
+
+    $router->add(
+        '/attendance/delete',
+        [
+            'controller' => 'attendance',
+            'action'     => 'delete',
+        ]
+    );
+
+
     $router->handle();
 
 } catch (\Throwable $e) {
-
     echo $e->getMessage();
 }
-
-

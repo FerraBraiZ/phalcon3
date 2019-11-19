@@ -11,7 +11,7 @@ use Phalcon\Security\Random;
 use Overtrue\Socialite\SocialiteManager;
 
 
-class SocialLoginController extends Controller
+class OauthCallbackController extends Controller
 {
 
     private $socialite = false;
@@ -19,7 +19,8 @@ class SocialLoginController extends Controller
 
     public function indexAction()
     {
-        $this->view->pick('social-login/index');
+        die('OauthCallback');
+        //$this->view->pick('social-login/index');
     }
 
 

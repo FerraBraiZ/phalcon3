@@ -66,17 +66,12 @@ $di->setShared('view', function () {
     $view = new Phalcon\Mvc\View();
     $view->setDI($this);
     $view->setViewsDir($config->application->viewsDir);
-    $view->setPartialsDir("/partials/");
+    $view->setPartialsDir("partials/");
 
     $view->registerEngines([
-//        ".phtml" => "Phalcon\Mvc\View\Engine\Php",
-//        ".volt"  => "Phalcon\Mvc\View\Engine\Volt"
-
         '.volt' => function ($view) {
             $config = $this->getConfig();
-
             $volt = new VoltEngine($view, $this);
-
             if($config->settings->development === false) {
                 $volt->setOptions([
                     'compiledPath' => $config->application->cacheDir,

@@ -8,5 +8,21 @@ class AttendanceController extends ControllerBase
         $this->view->pick('attendance/index');
     }
 
+    public function editAction()
+    {
+        die('editAction Attendance');
+    }
+
+    public function createAction()
+    {
+        die('createAction Attendance');
+    }
+
+
+    public function deleteAction()
+    {
+        die('deleteAction Attendance');
+    }
+
 }
 
