@@ -4,6 +4,7 @@ declare(strict_types=1);
 use \Phalcon\Di\FactoryDefault;
 use \Phalcon\Mvc\Application;
 
+
 try {
 
     if ( !file_exists(BASE_PATH . '/vendor/autoload.php') ){

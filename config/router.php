@@ -1,10 +1,24 @@
 <?php
 
-use Phalcon\Mvc\Router;
-
 try {
 
-    $router = new Router();
+    $router = new \Phalcon\Mvc\Router();
+
+    $router->add(
+        '/',
+        [
+            'controller' => 'index',
+            'action'     => 'index',
+        ]
+    );
+
+    $router->add(
+        '/dashboard',
+        [
+            'controller' => 'index',
+            'action'     => 'index',
+        ]
+    );
 
     $router->add(
         '/login',
@@ -27,14 +41,6 @@ try {
         [
             'controller' => 'sociallogin',
             'action'     => 'oauthCallback',
-        ]
-    );
-
-    $router->add(
-        '/dashboard',
-        [
-            'controller' => 'dashboard',
-            'action'     => 'index',
         ]
     );
 
@@ -127,24 +133,7 @@ try {
         ]
     );
 
-    $router->add(
-        '/alive',
-        [
-            'controller' => 'test',
-            'action'     => 'index',
-        ]
-    );
-
-    $router->notFound(
-        [
-            'controller' => 'notfound',
-            'action'     => 'index',
-        ]
-    );
-
-
     $router->handle();
-
 
 } catch (\Throwable $e) {
 

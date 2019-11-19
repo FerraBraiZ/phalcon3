@@ -1,6 +1,6 @@
 <?php
 
-use Phalcon\Controllers\Component\UserFragment;
+use \Phalcon\Mvc\Dispatcher as PhDispatcher;
 use Phalcon\Flash\Direct as Flash;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\Url as UrlResolver;
@@ -8,11 +8,17 @@ use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
 use Phalcon\Security;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
-
 use Aws\S3\S3Client;
 use Aws\S3\PostObjectV4;
 use Aws\Exception\AwsException;
 use Aws\Credentials\Credentials;
+use \Exception;
+use Phalcon\Dispatcher;
+use Phalcon\Mvc\Dispatcher as MvcDispatcher;
+use Phalcon\Events\Event;
+use Phalcon\Events\Manager as EventsManager;
+use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
+
 
 
 /**
@@ -52,7 +58,6 @@ $di->setShared('db', function () {
     return new $class($params);
 });
 
-
 /**
  * Setting up the view component
  */
@@ -63,9 +68,7 @@ $di->setShared('view', function () {
     $view->setViewsDir($config->application->viewsDir);
     $view->setPartialsDir("/partials/");
 
-    $view->registerEngines(
-
-        [
+    $view->registerEngines([
 //        ".phtml" => "Phalcon\Mvc\View\Engine\Php",
 //        ".volt"  => "Phalcon\Mvc\View\Engine\Volt"
 
@@ -110,25 +113,11 @@ $di->setShared('view', function () {
     return $view;
 });
 
-
-
 /**
  * If the configuration specify the use of metadata adapter use it or use memory otherwise
  */
 $di->setShared('modelsMetadata', function () {
     return new MetaDataAdapter();
-});
-
-/**
- * Register the session flash service with the Twitter Bootstrap classes
- */
-$di->set('flash', function () {
-    return new Flash([
-        'error'   => 'alert alert-danger',
-        'success' => 'alert alert-success',
-        'notice'  => 'alert alert-info',
-        'warning' => 'alert alert-warning'
-    ]);
 });
 
 /**
@@ -139,7 +128,6 @@ $di->setShared('session', function() {
     $session->start();
     return $session;
 });
-
 
 $di->setShared('s3Client',function(){
     return new S3Client([
@@ -154,7 +142,6 @@ $di->setShared('s3Client',function(){
         ],
     ]);
 });
-
 
 $di->setShared('postAwsPreSignedForm', function( $filename,$bucketName ){
 
@@ -235,3 +222,60 @@ $di->setShared('postAwsPreSignedForm', function( $filename,$bucketName ){
     }
 
 });
+
+/**
+ * Register the session flash service with the Twitter Bootstrap classes
+ */
+$di->set('flash', function () {
+    return new Flash([
+        'error'   => 'alert alert-danger',
+        'success' => 'alert alert-success',
+        'notice'  => 'alert alert-info',
+        'warning' => 'alert alert-warning'
+    ]);
+});
+
+$di->setShared('dispatcher',function () {
+        // Create an EventsManager
+        $eventsManager = new EventsManager();
+
+        // Attach a listener
+        $eventsManager->attach('dispatch:beforeException',
+
+            function (Event $event, $dispatcher, Exception $exception) {
+                // Handle 404 exceptions
+                if ($exception instanceof DispatchException) {
+                    $dispatcher->forward(
+                        [
+                            'controller' => 'error',
+                            'action'     => 'error404',
+                        ]
+                    );
+
+                    return false;
+                }
+
+                // Alternative way, controller or action doesn't exist
+                switch ($exception->getCode()) {
+                    case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+                    case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+                        $dispatcher->forward(
+                            [
+                                'controller' => 'error',
+                                'action'     => 'error404',
+                            ]
+                        );
+
+                        return false;
+                }
+            }
+        );
+
+        $dispatcher = new MvcDispatcher();
+
+        // Bind the EventsManager to the dispatcher
+        $dispatcher->setEventsManager($eventsManager);
+
+        return $dispatcher;
+    }
+);
