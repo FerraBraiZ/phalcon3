@@ -1,10 +1,8 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>404 Page Not Found</title>
+<title>Error</title>
 <style type="text/css">
 
 ::selection { background-color: #E13300; color: white; }
@@ -56,9 +54,12 @@ p {
 </style>
 </head>
 <body>
-	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
+<div id="container">
+    <h1>Infelizmente deu ruim no servidor! (erro 500).</h1>
+    <h3>dessa vez acho que não foi o estágiario... acho que foi aquele programador junior que contratamos como se fosse senior! ( pagando salario de junior é claro...)</h3>
+    <h5>mas nada tema! chimpamzés altamente treinados foram acionados!</h5>
+
+    <input type="button" value="clique aqui para voltar de onde vc veio, torça pra que tudo funcione..." onclick="history.back(-1)" />
+</div>
 </body>
 </html>

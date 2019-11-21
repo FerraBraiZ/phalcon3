@@ -239,30 +239,36 @@ $di->setShared('dispatcher',function () {
 
             function (Event $event, $dispatcher, Exception $exception) {
                 // Handle 404 exceptions
-                if ($exception instanceof DispatchException) {
-                    $dispatcher->forward(
-                        [
-                            'controller' => 'error',
-                            'action'     => 'error404',
-                        ]
-                    );
+//                if ($exception instanceof DispatchException) {
+//
+//                    echo "SHITTTTTTTTTTTTTTTTT";
+//
+//                    $dispatcher->forward(
+//                        [
+//                            'controller' => 'errors',
+//                            'action'     => 'error404',
+//                        ]
+//                    );
+//                    echo "SHITTTTTTTTTTTTTTTTT222222222222222222";
+//
+//                    return false;
+//                }
 
-                    return false;
-                }
-
-                // Alternative way, controller or action doesn't exist
-                switch ($exception->getCode()) {
-                    case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
-                    case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
-                        $dispatcher->forward(
-                            [
-                                'controller' => 'error',
-                                'action'     => 'error404',
-                            ]
-                        );
-
+//                // Alternative way, controller or action doesn't exist
+//                switch ($exception->getCode()) {
+//                    case Dispatcher::EXCEPTION_HANDLER_NOT_FOUND:
+//                    case Dispatcher::EXCEPTION_ACTION_NOT_FOUND:
+//                        $dispatcher->forward(
+//                            [
+//                                'controller' => 'errors',
+//                                'action'     => 'error500',
+//                            ]
+//                        );
+//
+//                        return false;
+//                }
                         return false;
-                }
+
             }
         );
 

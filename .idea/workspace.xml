@@ -2,17 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d4c82945-54a3-4904-ad15-a61c741591d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/OauthCallbackController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/AttendanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/AttendanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/CustomerController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CustomerController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/DashboardController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/DashboardController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/SocialLoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/SocialLoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/attendance/list.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/attendance/index.volt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/errorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ErrorsController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/dashboard/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/dashboard/index.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/social-login/index.volt" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/social-login/index.volt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_404.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_404.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_db.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_db.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_exception.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_exception.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_general.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_general.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_php.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/error_php.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/cli/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_404.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/errors/error404.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_404.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_db.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/errors/error_db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_db.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_exception.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/errors/error_exception.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_exception.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_general.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/errors/error500.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_general.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_php.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/errors/error_php.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/error_php.php.backup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/html/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/errors/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/bootstrap.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bootstrap.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/router.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/router.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/services.php" afterDir="false" />
     </list>
@@ -27,22 +43,51 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/router.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="256">
-              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+            <state relative-caret-position="540">
+              <caret line="51" selection-start-line="51" selection-end-line="52" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/AttendanceController.php">
+        <entry file="file://$PROJECT_DIR$/config/services.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="49" lean-forward="true" selection-start-line="2" selection-start-column="49" selection-end-line="2" selection-end-column="49" />
+            <state relative-caret-position="376">
+              <caret line="246" column="27" lean-forward="true" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
+              <folding>
+                <element signature="e#7#51#0#PHP" expanded="true" />
+                <element signature="e#1794#3222#1#PHP" />
+                <element signature="e#4051#6419#1#PHP" />
+                <element signature="e#6522#6739#1#PHP" />
+              </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/templates/base.volt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/dashboard/index.volt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="15">
+              <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/index/index.volt">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
     </leaf>
@@ -65,14 +110,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/views/index.phtml" />
-        <option value="$PROJECT_DIR$/app/views/login/login.volt" />
-        <option value="$PROJECT_DIR$/app/controllers/AliveController.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AuthController.php" />
-        <option value="$PROJECT_DIR$/config/loader.php" />
-        <option value="$PROJECT_DIR$/app/controllers/File.php" />
-        <option value="$PROJECT_DIR$/app/controllers/Atualize.php" />
-        <option value="$PROJECT_DIR$/app/controllers/AtualizeController.php" />
         <option value="$PROJECT_DIR$/app/models/Client.php" />
         <option value="$PROJECT_DIR$/app/models/CRUD_model.php" />
         <option value="$PROJECT_DIR$/app/models/Attendance.php" />
@@ -98,10 +135,7 @@
         <option value="$PROJECT_DIR$/app/views/partials/layout.volt" />
         <option value="$PROJECT_DIR$/app/controllers/ControllerBase.php" />
         <option value="$PROJECT_DIR$/app/views/notfound/index.volt" />
-        <option value="$PROJECT_DIR$/config/bootstrap.php" />
         <option value="$PROJECT_DIR$/app/controllers/NotFoundController.php" />
-        <option value="$PROJECT_DIR$/config/services.php" />
-        <option value="$PROJECT_DIR$/app/views/dashboard/index.volt" />
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/app/views/social-login/index.volt" />
         <option value="$PROJECT_DIR$/app/views/social_login/index.volt" />
@@ -115,7 +149,18 @@
         <option value="$PROJECT_DIR$/app/controllers/DashboardController.php" />
         <option value="$PROJECT_DIR$/app/controllers/AttendanceController.php" />
         <option value="$PROJECT_DIR$/app/views/attendance/index.volt" />
+        <option value="$USER_HOME$/Desktop/aprendendo_phalcon/app/views/dashboard/index.volt" />
+        <option value="$PROJECT_DIR$/config/bootstrap.php" />
+        <option value="$PROJECT_DIR$/app/controllers/errorController.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ErrorController.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/error_404.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/error_general.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ErrorsController.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/error500.php" />
+        <option value="$PROJECT_DIR$/app/views/errors/error404.php" />
         <option value="$PROJECT_DIR$/config/router.php" />
+        <option value="$PROJECT_DIR$/config/services.php" />
+        <option value="$PROJECT_DIR$/app/views/dashboard/index.volt" />
       </list>
     </option>
   </component>
@@ -173,12 +218,6 @@
               <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
               <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="controllers" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -186,7 +225,7 @@
               <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="attendance" type="462c0819:PsiDirectoryNode" />
+              <item name="dashboard" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
@@ -196,24 +235,7 @@
             <path>
               <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
               <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
-              <item name="data" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
               <item name="environment" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
-              <item name="environment" type="462c0819:PsiDirectoryNode" />
-              <item name="nginx" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
-              <item name="phalcon3" type="462c0819:PsiDirectoryNode" />
-              <item name="environment" type="462c0819:PsiDirectoryNode" />
-              <item name="php-7" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="phalcon3" type="b2602c69:ProjectViewProjectNode" />
@@ -235,19 +257,19 @@
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/views" />
+      <recent name="$PROJECT_DIR$/app/views/errors" />
+      <recent name="$PROJECT_DIR$/app/views/partials" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/app/views/dashboard" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/controllers" />
       <recent name="$PROJECT_DIR$/app/services" />
       <recent name="$PROJECT_DIR$/app/migrations" />
       <recent name="$PROJECT_DIR$/app/views/birthday" />
       <recent name="$PROJECT_DIR$/app/views/partials" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/app/views/partials" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/app/views/dashboard" />
-      <recent name="$PROJECT_DIR$/app/views/outdated-browser" />
-      <recent name="$PROJECT_DIR$/app/views/activation" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -297,16 +319,15 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="156621000" />
+    <option name="totallyTimeSpent" value="161230000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-1" y="0" width="1922" height="1081" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21299255" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21512248" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
-      <window_info anchor="bottom" id="Inspection Results" weight="0.32893288" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32855567" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -319,6 +340,7 @@
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Terminal" order="10" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
+      <window_info anchor="bottom" id="Inspection Results" order="12" weight="0.32893288" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -329,89 +351,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/views/partials/search.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/attendance/form.php" />
-    <entry file="file://$PROJECT_DIR$/app/views/attendance/index.jpeg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/signin/index.volt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/attendance/edit.volt" />
-    <entry file="file://$PROJECT_DIR$/app/views/attendance/form.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="30" lean-forward="true" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/errors/cli/error_404.php.backup">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/errors/cli/error_exception.php.backup">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/messages.volt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login/index.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-4798">
-          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/birthday/list.volt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/user/index_view.php" />
-    <entry file="file://$PROJECT_DIR$/app/views/errors/index.html">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/errors/html/error_404.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LogoutController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="26" column="19" lean-forward="true" selection-start-line="10" selection-start-column="13" selection-end-line="26" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/login/login_view.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="833">
-          <caret line="49" column="90" lean-forward="true" selection-start-line="49" selection-start-column="90" selection-end-line="49" selection-end-column="90" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/partials/footer.volt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/OutdatedBrowserController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" lean-forward="true" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/migrations/phalcon3.sql">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/migrations/1.0.1/client.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="10" column="6" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/services/PostAwsPreSignedForm.php" />
     <entry file="file://$PROJECT_DIR$/app/services/GetAwsPreSignedForm.php" />
     <entry file="file://$PROJECT_DIR$/app/controllers/GetSignedFileController.php">
       <provider selected="true" editor-type-id="text-editor">
@@ -456,9 +395,7 @@
     <entry file="file://$PROJECT_DIR$/public/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/data/cache/_phalcon3_app_views_dashboard_index.volt.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/data/cache/_phalcon3_app_views_dashboard_index.volt.php" />
     <entry file="file://$PROJECT_DIR$/app/controllers/AliveController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -483,49 +420,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="27" selection-start-line="27" selection-end-line="27" />
-          <folding>
-            <element signature="e#32#63#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/errorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="20" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/loader.php">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/services.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-285">
-          <caret line="23" column="3" lean-forward="true" selection-start-line="23" selection-start-column="3" selection-end-line="23" selection-end-column="3" />
-          <folding>
-            <element signature="e#7#51#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/dashboard/index.volt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
@@ -602,13 +498,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/attendance/index.volt">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -636,10 +525,176 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/controllers/BaseController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="36" column="1" lean-forward="true" selection-start-line="36" selection-start-column="1" selection-end-line="36" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/controllers/DashboardController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="1" lean-forward="true" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="47" column="1" lean-forward="true" selection-start-line="47" selection-start-column="1" selection-end-line="47" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/controllers/AccountsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="1" lean-forward="true" selection-start-line="16" selection-start-column="1" selection-end-line="16" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/templates/dashboard.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="41" column="19" lean-forward="true" selection-start-line="41" selection-start-column="19" selection-end-line="41" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/index/index.volt.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="46" lean-forward="true" selection-start-line="18" selection-start-column="46" selection-end-line="18" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/dashboard/index.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="405">
+          <caret line="27" column="39" lean-forward="true" selection-start-line="27" selection-start-column="39" selection-end-line="27" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/dashboard/index.volt.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="225">
+          <caret line="15" column="35" selection-start-line="15" selection-start-column="35" selection-end-line="15" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/bootstrap.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="780">
+          <caret line="52" column="44" selection-start-line="52" selection-start-column="34" selection-end-line="52" selection-end-column="44" />
+          <folding>
+            <element signature="e#32#63#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/IndexController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/html/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/index.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/login/index.volt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/cli/error_404.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/error_db.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/error_php.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="6" lean-forward="true" selection-start-line="32" selection-start-column="6" selection-end-line="32" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/error_exception.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ErrorsController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/error500.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="915">
+          <caret line="61" column="67" selection-start-line="61" selection-start-column="67" selection-end-line="61" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/errors/error404.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="766">
+          <caret line="61" column="85" selection-start-line="61" selection-start-column="85" selection-end-line="61" selection-end-column="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/public/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="54" column="33" lean-forward="true" selection-start-line="54" selection-start-column="33" selection-end-line="54" selection-end-column="33" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#pre#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/config/router.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="256">
-          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
+        <state relative-caret-position="540">
+          <caret line="51" selection-start-line="51" selection-end-line="52" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/config/services.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="376">
+          <caret line="246" column="27" lean-forward="true" selection-start-line="246" selection-start-column="27" selection-end-line="246" selection-end-column="27" />
+          <folding>
+            <element signature="e#7#51#0#PHP" expanded="true" />
+            <element signature="e#1794#3222#1#PHP" />
+            <element signature="e#4051#6419#1#PHP" />
+            <element signature="e#6522#6739#1#PHP" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/index/index.volt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$USER_HOME$/Desktop/aprendendo_phalcon/app/views/templates/base.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/dashboard/index.volt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="1" column="1" selection-start-line="1" selection-start-column="1" selection-end-line="1" selection-end-column="1" />
         </state>
       </provider>
     </entry>

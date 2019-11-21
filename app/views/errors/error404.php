@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -57,8 +55,11 @@ p {
 </head>
 <body>
 	<div id="container">
-		<h1><?php echo $heading; ?></h1>
-		<?php echo $message; ?>
-	</div>
+        <h1>Infelizmente não encontramos o que vc procurava! (erro 404).</h1>
+        <h3>tenho certeza que o estágiario está involvido mas não podemos confirmar nem negar nada até apurarmos os fatos!</h3>
+        <h5>chimpamzés altamente treinados foram acionados! ufa! agora vc já pode relaxar!</h5>
+
+        <input type="button" value="clique aqui para voltar de onde vc veio torcendo pra que tudo funcione..." onclick="history.back(-1)" />
+    </div>
 </body>
 </html>

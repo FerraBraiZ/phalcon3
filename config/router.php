@@ -5,8 +5,30 @@ use Phalcon\Mvc\Router;
 try {
 
     $router = new Router(false);
-//    $router->setDefaultController('index');
-//    $router->setDefaultAction('index');
+
+    /*
+
+    $router->setDefaultModule('backend');
+    $router->setDefaultNamespace('Backend\Controllers');
+    $router->setDefaultController('index');
+    $router->setDefaultAction('index');
+
+    $router->setDefaults(
+        [
+            'controller' => 'index',
+            'action'     => 'index',
+        ]
+    );
+
+
+    $router->notFound(
+        [
+            'controller' => 'index',
+            'action'     => 'index',
+        ]
+    );
+
+    */
 
     $router->add(
         '/',
@@ -65,7 +87,7 @@ try {
     );
 
     $router->add(
-        '/customer/edit',
+        '/customer/edit/{id}',
         [
             'controller' => 'customer',
             'action'     => 'edit',
@@ -73,7 +95,7 @@ try {
     );
 
     $router->add(
-        '/customer/update',
+        '/customer/update/{id}',
         [
             'controller' => 'customer',
             'action'     => 'update',
@@ -81,7 +103,7 @@ try {
     );
 
     $router->add(
-        '/customer/delete',
+        '/customer/delete/{id}',
         [
             'controller' => 'customer',
             'action'     => 'delete',
@@ -106,7 +128,7 @@ try {
     );
 
     $router->add(
-        '/user/edit',
+        '/user/edit/{id}',
         [
             'controller' => 'user',
             'action'     => 'edit',
@@ -114,7 +136,7 @@ try {
     );
 
     $router->add(
-        '/user/update',
+        '/user/update/{id}',
         [
             'controller' => 'user',
             'action'     => 'update',
@@ -122,7 +144,7 @@ try {
     );
 
     $router->add(
-        '/user/delete',
+        '/user/delete/{id}',
         [
             'controller' => 'user',
             'action'     => 'delete',
@@ -146,7 +168,7 @@ try {
     );
 
     $router->add(
-        '/attendance/edit',
+        '/attendance/edit/{id}',
         [
             'controller' => 'attendance',
             'action'     => 'edit',
@@ -154,7 +176,7 @@ try {
     );
 
     $router->add(
-        '/attendance/update',
+        '/attendance/update/{id}',
         [
             'controller' => 'attendance',
             'action'     => 'update',
@@ -162,7 +184,7 @@ try {
     );
 
     $router->add(
-        '/attendance/delete',
+        '/attendance/delete/{id}',
         [
             'controller' => 'attendance',
             'action'     => 'delete',

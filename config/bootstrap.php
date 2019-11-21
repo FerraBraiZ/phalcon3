@@ -2,7 +2,7 @@
 declare(strict_types=1);
 
 use \Phalcon\Di\FactoryDefault;
-use \Phalcon\Mvc\Application;
+use \Phalcon\Mvc\Application as MVC;
 
 
 try {
@@ -48,7 +48,7 @@ try {
     /**
      * Handle the request
      */
-    $application = new Application($di);
+    $application = new MVC($di);
 
      echo $application->handle()->getContent();
 
