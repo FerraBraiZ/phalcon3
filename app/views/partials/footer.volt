@@ -1,5 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
+{% extends "templates/base.volt" %}
+
+{% block footer %}
 <div   id="footer" class="navbar navbar-default" >
     <div class="row">
         <div class="col-md-3"><a href="https://www.facebook.com/pages/Veterin&#225;ria-Parque-Da-Fonte/281760491905203" target="_blank">Veterin&#225;ria Parque da Fonte</a></div>
@@ -106,5 +108,5 @@
         
     </script>
 
-</body>
-</html>
+
+{% endblock %}

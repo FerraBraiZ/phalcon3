@@ -1,4 +1,7 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
+{% extends "templates/base.volt" %}
+
+{% block messages %}
     <!-- Mensagens-->  
     <div id="error_message" class="alert alert-danger alert-dismissable hide"><?=btn_close()?></div>    
     <div id="success_message" class="alert alert-success alert-dismissable hide"><?=btn_close()?></div>
@@ -27,4 +30,5 @@
                 Por favor aguarde, procurando CEP online...              
             </h1>            
     </div>
-    <!-- /Mensagens --> 
+    <!-- /Mensagens -->
+{% endblock %}
