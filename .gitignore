@@ -16,3 +16,4 @@ cache/
 node_modules/
 mock/
 .env
+.idea/workspace.xml

@@ -1,24 +1,17 @@
 <?php
 
-use \Phalcon\Mvc\Dispatcher as PhDispatcher;
+use Aws\Exception\AwsException;
+use Aws\S3\PostObjectV4;
+use Aws\S3\S3Client;
+use Phalcon\Events\Event;
+use Phalcon\Events\Manager as EventsManager;
 use Phalcon\Flash\Direct as Flash;
+use Phalcon\Mvc\Dispatcher as MvcDispatcher;
 use Phalcon\Mvc\Model\Metadata\Memory as MetaDataAdapter;
 use Phalcon\Mvc\Url as UrlResolver;
 use Phalcon\Mvc\View\Engine\Php as PhpEngine;
 use Phalcon\Mvc\View\Engine\Volt as VoltEngine;
-use Phalcon\Security;
 use Phalcon\Session\Adapter\Files as SessionAdapter;
-use Aws\S3\S3Client;
-use Aws\S3\PostObjectV4;
-use Aws\Exception\AwsException;
-use Aws\Credentials\Credentials;
-use \Exception;
-use Phalcon\Dispatcher;
-use Phalcon\Mvc\Dispatcher as MvcDispatcher;
-use Phalcon\Events\Event;
-use Phalcon\Events\Manager as EventsManager;
-use Phalcon\Mvc\Dispatcher\Exception as DispatchException;
-
 
 
 /**
