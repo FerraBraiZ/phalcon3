@@ -31,6 +31,9 @@ class UserController extends ControllerBase
 
     public function createAction()
     {
+
+        $this->view->pick('user/form');
+
 //        if (!$this->request->isPost()) {
 //            return $this->dispatcher->forward(["controller" => "user", "action" => "index" ]);
 //        }

@@ -1,16 +1,12 @@
-<?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
-
-<!-- VIEW INSERIR CLIENTE -->
-
 <div class="panel panel-default">
 
     <div class="panel-heading">
-        <h3 class="panel-title">Cadastrar Novo Cliente <?=PGT;?></h3>
+        <h3 class="panel-title">Cadastrar Novo usuario</h3>
     </div>
 
     <div class="panel-body">
         
-        <form id="clientefrm" class="form-horizontal"  method="post" action="<?= base_url('/salvar/cliente/')?>">
+        <form id="clientefrm" class="form-horizontal"  method="post" action="/user/create/">
 
             <div class="row">
 
@@ -67,7 +63,9 @@
                         <h3 class="hidden-lg">Adicionar foto</h3>
                         <div id="file_box" class="text-center">
                             
-                            <?php \template_blank_profile_pic()?>
+<!--
+                            //\template_blank_profile_pic()
+-->
 
                         </div><!--/file_box-->
                         <br/>    
@@ -214,7 +212,7 @@
 
             <div class="input-group input-group-fullwidth">
 
-                <a id="btn_lista_cliente" href="<?=base_url('listar/cliente/')?>" class="btn btn-default pull-left"> Listar Clientes </a>
+                <a id="btn_lista_cliente" href="/user" class="btn btn-default pull-left"> Listar usuarios </a>
                 
                 <button type="submit" class="btn btn-success pull-right"> Gravar Dados </button>                
 
@@ -236,9 +234,9 @@
 </div> <!-- /panel panel-default  -->
 
 
-<!-- modal_file_upload  -->
-<?php \template_modal_file_upload(1,'form_upload_img') ?>
-<!-- /modal_file_upload  -->
+<!-- modal_file_upload
+ \template_modal_file_upload(1,'form_upload_img')
+ /modal_file_upload  -->
 
 <!-- /VIEW INSERIR CLIENTE -->
 

@@ -1,12 +1,7 @@
-
-<!-- LISTAGEM DE CLIENTE VIEW -->
-
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-
 <div class="panel panel-default">
 
     <div class="panel-heading">
-        <h3 class="panel-title">Listagem de Clientes    
+        <h3 class="panel-title">Listagem de Usuários
             <span class="total_clientes_encontrados_span">
                   , <?=template_show_total_records( $total_clientes,'cliente' )?> 
             </span>
@@ -22,14 +17,14 @@
         
         <div id="List_view_submenu">
         
-            <a href="<?=base_url('novo/cliente/')?>" class="btn btn-success pull-left">Adicionar Novo Cliente</a>                
+            <a href="<?=base_url('novo/cliente/')?>" class="btn btn-success pull-left">Adicionar Novo Usuário</a>
             
             <!-- BUSCA -->
-            <form id="buscaClienteFrm" class="form-horizontal"  method="post" action="<?=base_url('listar/cliente/')?>">
+            <form id="buscaUsuárioFrm" class="form-horizontal"  method="post" action="<?=base_url('listar/cliente/')?>">
                 <div id="div_busca" class="input-group">
                     <span class="input-group-addon">Busca</span>
                     <input title="Informe NOME, CPF ou TELEFONE do cliente" type="text" class="form-control tooltipBubble" id="busca" name="busca"
-                           value="<?=$this->session->userdata('busca_cliente')?>" placeholder="NOME, CPF ou TELEFONE do Cliente" autofocus>
+                           value="<?=$this->session->userdata('busca_cliente')?>" placeholder="NOME, CPF ou TELEFONE do Usuário" autofocus>
                     <span class="input-group-btn">
                         <button type="submit" id="buscaBtn" class="btn btn-default">
                             <i class="glyphicon  glyphicon-search"></i>
@@ -82,13 +77,13 @@
 
             <!-- CLIENTE NOME -->
             <td class="resizable_text">
-            <!-- Modal Excluir Cliente NOME -->
+            <!-- Modal Excluir Usuário NOME -->
                 <?=$cliente['Personal_data']['nome'];
                 template_modal_confirm_delition("excluir_cliente_id_".
                                                 $cliente['Personal_data']['id_cliente'],
                                                 "sm","cliente", $cliente['Personal_data']["nome"]);
                 ?>
-            <!-- Modal Excluir Cliente NOME -->
+            <!-- Modal Excluir Usuário NOME -->
             </td>
             <!-- /CLIENTE NOME -->
 
@@ -316,7 +311,7 @@
                                                     <tr id="dados_pessoais">
                                                         <th class="th_cpf">CPF</th>
                                                         <th class="th_aniversario">Anivers&#225;rio</th>
-                                                        <th class="th_cliente_desde">Cliente Desde</th>
+                                                        <th class="th_cliente_desde">Usuário Desde</th>
                                                     </tr>
                                                 </thead>    
 
