@@ -1,4 +1,4 @@
-FROM mysql:latest
+FROM mysql:5.7
 
 #ARG MYSQL_DATABASE
 #ARG MYSQL_USER
@@ -10,12 +10,12 @@ FROM mysql:latest
 #ENV MYSQL_PASSWORD=753159
 #ENV MYSQL_ROOT_PASSWORD=753159
 #
-##RUN chown -R mysql:mysql /var/run/mysqld/mysqld.sock
-##RUN sleep 5
-#RUN /bin/bash -c "/usr/bin/mysqld_safe --skip-grant-tables &"
-#RUN /bin/bash -c "drop user admin@localhost;"
-#RUN /bin/bash -c "flush privileges;"
-#RUN /bin/bash -c "create user admin@localhost identified by 'admins_password'"
+#RUN chown -R mysql:mysql /var/run/mysqld/mysqld.sock
+RUN sleep 15
+RUN /bin/bash -c "/usr/bin/mysqld_safe --skip-grant-tables &"
+RUN /bin/bash -c "drop user root@localhost;"
+RUN /bin/bash -c "flush privileges;"
+RUN /bin/bash -c "create user root@localhost identified by '753159'"
 
 #RUN sleep 15
 #RUN rm -rf /var/lib/mysql

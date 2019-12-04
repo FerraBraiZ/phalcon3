@@ -1,3 +1,4 @@
+{# template/base.volt #}
 <!doctype html>
 <html lang="pt-br">
 <head>

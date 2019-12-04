@@ -1,8 +1,3 @@
-
-<!-- LISTAGEM DE CLIENTE VIEW -->
-
-<?php defined('BASEPATH') OR exit('No direct script access allowed');?>
-
 <div class="panel panel-default">
 
     <div class="panel-heading">
